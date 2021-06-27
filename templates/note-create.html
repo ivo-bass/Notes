@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+
+{% block profile-link %}
+    <a href="{% url 'details profile' %}">Profile</a>
+{% endblock %}
+
+{% block body %}
+
+    <div class="body">
+        <!--headings-->
+        <h1>Add Note</h1>
+        <!--headings-->
+
+        <!--note data form-->
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="name">Title</label>
+                {{ form.title }}
+
+                <label for="content">Content</label>
+                {{ form.content }}
+
+                <label for="image_url">Link to Image</label>
+                {{ form.image_url }}
+
+                <input type="submit" value="Publish"/>
+            </form>
+        </div>
+        <!--end note data form-->
+    </div>
+
+{% endblock %}

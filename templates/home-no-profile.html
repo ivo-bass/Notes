@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+
+
+{% block body %}
+    <div class="body">
+        <!--headings-->
+        <h1>Enter Your Data</h1>
+        <!--end headings-->
+
+        <!--profile data form-->
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="firstName">First Name</label>
+                {{ form.first_name }}
+
+                <label for="lastName">Last Name</label>
+                {{ form.last_name }}
+
+                <small>{{ form.age.errors }}</small>
+                <label for="age">Age</label>
+                {{ form.age }}
+
+                <label for="profilePhoto">Link to Profile Image</label>
+                {{ form.image_url }}
+
+                <input type="submit" value="SUBMIT"/>
+            </form>
+        </div>
+        <!--end profile data form-->
+    </div>
+{% endblock %}

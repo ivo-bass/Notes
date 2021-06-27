@@ -1,0 +1,28 @@
+{% extends 'shared/base.html' %}
+
+{% block profile-link %}
+    <a href="{% url 'details profile' %}">Profile</a>
+{% endblock %}
+
+{% block add-note-link %}
+    <a href="{% url 'add note' %}">Add Note</a>
+{% endblock %}
+
+{% block body %}
+
+    <div class="body">
+        <div class="form">
+            <h1>Are you sure you want to delete your profile?</h1>
+            <div class="form-row">
+                <form method="POST">
+                    {% csrf_token %}
+                    <a href="{% url 'details profile' %}">
+                        <button class="green">Cancel</button>
+                    </a>
+                    <button class="red">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

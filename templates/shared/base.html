@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <title>Notes</title>
+</head>
+
+<body>
+<!--navigation bar-->
+<header>
+    <nav>
+        <ul>
+            <li class="img"><img src="{% static 'images/note.png' %}" alt="note image"/></li>
+            <li><a href="/">Notes</a></li>
+            <li class="right">
+                {% block add-note-link %}{% endblock %}
+                {% block profile-link %}{% endblock %}
+            </li>
+        </ul>
+    </nav>
+</header>
+<!--end navigation bar-->
+
+
+{% block body %}
+    If you see this something went wrong...
+{% endblock %}
+
+<footer>
+    {% include 'shared/footer.html' %}
+</footer>
+
+</body>
+</html>
